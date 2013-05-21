@@ -116,8 +116,8 @@ var STB = STB || ( function() {
         }
 
         function Track() {
-            this.language
-            this.codec
+            this.language;
+            this.codec;
         }
 
         function CommandResult(xml) {
