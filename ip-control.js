@@ -122,11 +122,18 @@ var STB = STB || ( function() {
 
         function CommandResult(xml) {
             var parameters = xml.getElementsByTagName("param");
-            for (var i = 0; i < parameters.length; i++) {
-                var parameter = new Parameter(parameters[i]);
+            var i;
+            var parameter;
+            
+            for (i = 0; i < parameters.length; i++) {
+                parameter = new Parameter(parameters[i]);
                 
-                if (parameter.value === "-1" || parameter.value === "und") {// skip parameters that are not applicable
+                if (parameter.value === -1) { // skip parameters that are not applicable
                     continue;
+                }
+                
+                if (parameter.value === "und") { // normalize values for undefined language tracks
+                    parameter.value = "";
                 }
 
                 if (Output.hasOwnProperty(parameter.name)) {
