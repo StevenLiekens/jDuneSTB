@@ -141,7 +141,7 @@ var STB = STB || ( function() {
                                 this.audioTracks = []
                             };
                             if (!this.audioTracks[index]) {
-                                this.audioTracks[index] = new STB.Track();
+                                this.audioTracks[index] = new Track();
                             }
                             track = this.audioTracks[index];
                             break;
@@ -150,7 +150,7 @@ var STB = STB || ( function() {
                                 this.subtitlesTracks = []
                             };
                             if (!this.subtitlesTracks[index]) {
-                                this.subtitlesTracks[index] = new STB.Track();
+                                this.subtitlesTracks[index] = new Track();
                             }
                             track = this.subtitlesTracks[index];
                             break;
