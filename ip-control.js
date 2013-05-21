@@ -124,7 +124,7 @@ var STB = STB || ( function() {
             var parameters = xml.getElementsByTagName("param");
             for (var i = 0; i < parameters.length; i++) {
                 var parameter = new Parameter(parameters[i]);
-                console.log(parameter.name + " === " + parameter.value);
+                
                 if (parameter.value === "-1" || parameter.value === "und") {// skip parameters that are not applicable
                     continue;
                 }
